@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+            
+        }
+        
+        /* grid declair */
+        .header {
+            grid-area: header;
+        }
+        .nav {
+            grid-area: nav;
+        }
+        .main{
+            grid-area: main;
+        }
+        .aside {
+            grid-area: aside;
+        }
+        .ad {
+            grid-area: ad;
+        }
+        .footer{
+            grid-area: footer;
+        }
+
+        .header , .nav, .main, .aside, .ad, .footer {
+            background-color: bisque;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        /* grid styles */
+        .body {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-areas: 
+            "header header header header"
+            "nav  main main aside"
+            "nav  main main ad"
+            "footer footer footer footer"
+            ;
+        }
+
+        @media screen and (max-width: 576px) {
+            .body {
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "ad"
+            "footer"
+            ;
+        }   
+        }
+        @media screen and  (min-width: 577px) and (max-width: 992px) {
+            .body{
+                grid-template-columns: 1fr 3fr;
+                grid-template-areas: 
+                "header header"
+                "nav nav"
+                "aside main"
+                "ad footer"
+                ;
+            }
+            .nav{
+                display: flex;
+                justify-content: space-between;
+            }
+    }
+    </style>
+</head>
+<body class="body">
+    <header class="header">
+        <h3>Header</h3>
+    </header>
+    <nav class="nav">
+        
+            <li><a href="">nav </a></li>
+            <li><a href="">nav </a></li>
+            <li><a href="">nav </a></li>
+        
+    </nav>
+    <main class="main">
+        <article><h3>Article</h3></article>
+        <article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam voluptas neque quasi qui inventore accusamus quos ullam esse necessitatibus accusantium.</p></article>
+    </main>
+    <aside class="aside">
+        <h3>Sidebar</h3>
+    </aside>
+    <div class="ad">
+        <h3>Ad</h3>
+    </div>
+    <footer class="footer">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio dolores vel expedita quos est facere corrupti cum exercitationem veritatis ipsam!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .box {
+            height: 200px;
+            width: 100%;
+            background-color: aquamarine;
+        }
+        /* image */
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        .row{
+            
+            margin-bottom: 5px;
+        }
+
+        .second-row , .third-row{
+            display: flex;
+            gap: 5px;
+        }
+        .second-row > div {
+            flex: 1;
+        }
+        .second-row-third-div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .second-row-third-div img {
+            height: calc(50% - 5px/2);
+        }
+
+        .third-row-second-div {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 5px;
+        }
+        .third-row > div {
+            flex: 1;
+        }
+
+        @media screen and (min-width: 577px) {
+            .row {
+                height: 400px;
+            }
+        }
+
+
+        @media screen and (max-width: 576px) {
+            .container{
+                flex-direction: column;
+            }
+            .second-row , .third-row{
+            flex-direction: column;
+            }
+            .third-row-second-div {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+        @media screen and (min-width: 577px) and (max-width: 992px) {
+            .box{
+                background-color: blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="box">
+            <h3>box no-1</h3>
+        </div>
+        <div class="box">
+            <h3>box no-2</h3>
+        </div>
+        <div class="box">
+            <h3>box no-3</h3>
+        </div>
+        <div class="box">
+            <h3>box no-4</h3>
+        </div>
+    </section>
+    <main>
+        <section class="row">
+            <img src="images/A.jpg" alt="">
+        </section>
+
+        <section class="row second-row">
+            <div><img src="images/B.jpg" alt=""></div>
+            <div><img src="images/C.jpg" alt=""></div>
+            <div class="second-row-third-div">
+                <img src="images/D.jpg" alt="">
+                <img src="images/E.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="row third-row">
+            <div><img src="images/F.jpg" alt=""></div>
+            <div class="third-row-second-div">
+                <div><img src="images/G.jpg" alt=""></div>
+                <div><img src="images/G.jpg" alt=""></div>
+                <div><img src="images/G.jpg" alt=""></div>
+                <div><img src="images/G.jpg" alt=""></div>
+            </div>
+            <div><img src="images/I.jpg" alt=""></div>
+        </section>
+
+    </main>
+</body>
+</html>
